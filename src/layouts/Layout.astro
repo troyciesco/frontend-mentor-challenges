@@ -1,0 +1,81 @@
+---
+import '@/styles/index.scss';
+import { challenges } from '@/challenges';
+const slugify = (str: string) =>
+  str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class='container'>
+      <aside>
+        <ul>
+          {
+            challenges.map((challenge: any) => {
+              return !challenge.href ? null : (
+                <li>
+                  <a href={`/${challenge.href || slugify(challenge as string)}`}>{challenge.text || challenge}</a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </aside>
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  .container {
+    display: flex;
+  }
+
+  aside {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  ul {
+    padding: 1rem;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+</style>
