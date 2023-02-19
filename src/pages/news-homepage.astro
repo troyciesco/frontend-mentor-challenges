@@ -1,0 +1,316 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title='News Homepage'>
+  <div class='page-container'>
+    <header>
+      <nav>
+        <img
+          src='/news-homepage/images/logo.svg'
+          alt=''
+        />
+        <ul class='main-nav__links'>
+          <li>
+            <a href='#'>Home</a>
+          </li>
+          <li>
+            <a href='#'>New</a>
+          </li>
+          <li>
+            <a href='#'>Popular</a>
+          </li>
+          <li>
+            <a href='#'>Trending</a>
+          </li>
+          <li>
+            <a href='#'>Categories</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class='banner'>
+        <div class='main-story'>
+          <div class='main-story__image'>
+            <img
+              src='/news-homepage/images/image-web-3-desktop.jpg'
+              alt=''
+            />
+          </div>
+          <div class='main-story__content'>
+            <h1 class='main-story__title'>The Bright Future of Web 3.0?</h1>
+            <div class='main-story__details'>
+              <p>
+                We dive into the next evolution of the web that claims to put the power of the platforms back into the
+                hands of the people. But is it really fulfilling its promise?
+              </p>
+              <a>Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class='new-stories'>
+          <h2 class='new-stories__title'>New</h2>
+          <div class='new-story-column'>
+            <a
+              href='#'
+              class='new-story'>
+              <h3 class='new-story__title'>Hydrogen VS Electric Cars</h3>
+              <p class='new-story__description'>Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </a>
+            <hr />
+            <a
+              href='#'
+              class='new-story'>
+              <h3 class='new-story__title'>The Downsides of AI Artistry</h3>
+              <p class='new-story__description'>
+                What are the possible adverse effects of on-demand AI image generation?
+              </p>
+            </a>
+            <hr />
+            <a
+              href='#'
+              class='new-story'>
+              <h3 class='new-story__title'>Is VC Funding Drying Up?</h3>
+              <p class='new-story__description'>
+                Private funding by VC firms is down 50% YOY. We take a look at what that means.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='top-stories'>
+        <h2 class='sr-only'>Top Stories</h2>
+        <div class='top-story'>
+          <div class='top-story__image'>
+            <img
+              src='/news-homepage/images/image-retro-pcs.jpg'
+              alt=''
+            />
+          </div>
+          <div>
+            <span class='top-story__number'>01</span>
+            <h3 class='top-story__title'>Reviving Retro PCs</h3>
+            <p class='top-story__description'>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class='top-story'>
+          <div class='top-story__image'>
+            <img
+              src='/news-homepage/images/image-top-laptops.jpg'
+              alt=''
+            />
+          </div>
+          <div>
+            <span class='top-story__number'>02</span>
+            <h3 class='top-story__title'>Top 10 Laptops of 2022</h3>
+            <p class='top-story__description'>Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class='top-story'>
+          <div class='top-story__image'>
+            <img
+              src='/news-homepage/images/image-gaming-growth.jpg'
+              alt=''
+            />
+          </div>
+          <div>
+            <span class='top-story__number'>03</span>
+            <h3 class='top-story__title'>The Growth of Gaming</h3>
+            <p class='top-story__description'>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style lang='scss'>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+  :root {
+    --almost-white: #fffdfa;
+    --dark-space-blue: #00001a;
+    --gunmetal: #5e607a;
+    --light-vermillion: #f15d51;
+    --silver: #c5c6ce;
+    --yellow: #e9aa52;
+  }
+
+  * {
+    font-family: 'Inter';
+  }
+
+  .page-container {
+    padding: 0 1rem;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 0;
+  }
+
+  .main-nav__links {
+    display: flex;
+    gap: 2.5rem;
+    & a {
+      color: var(--gunmetal);
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .banner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .main-story__image {
+    width: 100%;
+    height: 18.75rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    & img {
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .main-story__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+  }
+
+  .main-story__title {
+    font-size: 3.5rem;
+    line-height: 56px;
+    font-weight: 800;
+  }
+
+  .main-story__details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & p {
+      color: var(--gunmetal);
+      margin-bottom: 1.5rem;
+      line-height: 26px;
+    }
+
+    & a {
+      display: block;
+      background: var(--light-vermillion);
+      color: var(--almost-white);
+      padding: 0.75rem 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+  }
+
+  .new-stories {
+    background: var(--dark-space-blue);
+    padding: 2rem 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      color: var(--yellow);
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  }
+
+  .new-story-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    & hr {
+      height: 1px;
+      background-color: var(--gunmetal);
+      border: none;
+    }
+  }
+
+  .new-story {
+    margin: 2rem 0;
+
+    &__title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--almost-white);
+      margin-bottom: 0.5rem;
+    }
+
+    &__description {
+      color: var(--silver);
+    }
+  }
+
+  .top-stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .top-story {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+
+    &__image {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      & img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 32px;
+      color: var(--silver);
+      margin-bottom: 0.75rem;
+    }
+
+    &__title {
+      font-size: 1.125rem;
+      font-weight: 800;
+      line-height: 24px;
+      color: var(--dark-space-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    &__description {
+      line-height: 26px;
+      color: var(--gunmetal);
+    }
+  }
+</style>

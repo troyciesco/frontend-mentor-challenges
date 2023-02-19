@@ -22,7 +22,7 @@ export const challenges: any = [
   'Ping single column coming soon page',
   'Huddle landing page with a single introductory section',
   'Single-page developer portfolio',
-  'News homepage',
+  { text: 'News homepage', href: 'news-homepage' },
   'Notifications page',
   'Interactive card details form',
   'Single-page design portfolio',

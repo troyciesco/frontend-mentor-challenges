@@ -49,9 +49,9 @@ const { title } = Astro.props;
           }
         </ul>
       </aside>
-      <main>
+      <div class='slot-container'>
         <slot />
-      </main>
+      </div>
     </div>
   </body>
 </html>
@@ -66,7 +66,7 @@ const { title } = Astro.props;
     overflow-y: scroll;
   }
 
-  main {
+  .slot-container {
     flex-grow: 1;
   }
 
