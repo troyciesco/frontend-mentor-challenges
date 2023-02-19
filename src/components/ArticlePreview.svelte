@@ -1,25 +1,31 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { fly } from "svelte/transition"
+  import { onMount } from 'svelte';
+  import { fly } from 'svelte/transition';
 
-  let isLoaded: boolean = false
+  let isLoaded: boolean = false;
 
   onMount(() => {
-    isLoaded = true
-  })
+    isLoaded = true;
+  });
 </script>
 
 <main>
   {#if isLoaded}
-    <div class="card" in:fly={{ y: 100 }}>
+    <div
+      class="card"
+      in:fly={{ y: 100 }}>
       <div class="image">
-        <img src="images/drawers.jpg" alt="green side table with a plant" />
+        <img
+          src="/images/drawers.jpg"
+          alt="green side table with a plant" />
       </div>
       <div class="content">
-        <h3 class="content__title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h3>
+        <h3 class="content__title">
+          Shift the overall look and feel by adding these wonderful touches to furniture in your home
+        </h3>
         <p class="content__description">
-          Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips
-          to help you make any room feel complete.
+          Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've
+          got some simple tips to help you make any room feel complete.
         </p>
         <div class="details">
           <div>img</div>

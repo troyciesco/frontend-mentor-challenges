@@ -1,27 +1,35 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { fly } from "svelte/transition"
+  import { onMount } from 'svelte';
+  import { fly } from 'svelte/transition';
 
-  let isLoaded: boolean = false
+  let isLoaded: boolean = false;
 
   onMount(() => {
-    isLoaded = true
-  })
+    isLoaded = true;
+  });
 </script>
 
 <main>
   {#if isLoaded}
-    <div class="card" in:fly={{ y: 100 }}>
+    <div
+      class="card"
+      in:fly={{ y: 100 }}>
       <div class="img-container">
-        <img src="../images/illustration-hero.svg" alt="Illustrated woman dancing with headphones on" />
+        <img
+          src="/images/illustration-hero.svg"
+          alt="Illustrated woman dancing with headphones on" />
       </div>
       <div class="content-container">
         <h1 class="title">Order Summary</h1>
-        <p class="description">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+        <p class="description">
+          You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+        </p>
         <div class="plan">
           <div style="flex-grow: 1; display: flex; align-items: center;">
             <div class="plan__icon">
-              <img src="images/icon-music.svg" alt="music icon" />
+              <img
+                src="/images/icon-music.svg"
+                alt="music icon" />
             </div>
             <div class="plan__details">
               <span class="plan__type">Annual Plan</span>

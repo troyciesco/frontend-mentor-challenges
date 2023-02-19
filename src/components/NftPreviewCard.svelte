@@ -1,19 +1,23 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { fly } from "svelte/transition"
+  import { onMount } from 'svelte';
+  import { fly } from 'svelte/transition';
 
-  let isLoaded: boolean = false
+  let isLoaded: boolean = false;
 
   onMount(() => {
-    isLoaded = true
-  })
+    isLoaded = true;
+  });
 </script>
 
 <main>
   {#if isLoaded}
-    <div class="card" in:fly={{ y: 100 }}>
+    <div
+      class="card"
+      in:fly={{ y: 100 }}>
       <div class="img-container">
-        <img src="images/image-equilibrium.jpg" alt="3d cube on a point" />
+        <img
+          src="/images/image-equilibrium.jpg"
+          alt="3d cube on a point" />
       </div>
       <div class="content-container">
         <h1 class="title">Equilibrium #3429</h1>
@@ -25,7 +29,9 @@
         <hr class="divider" />
         <div class="creator">
           <div class="creator__avatar">
-            <img src="images/image-avatar.png" alt="Jules Wyvern" />
+            <img
+              src="/images/image-avatar.png"
+              alt="Jules Wyvern" />
           </div>
           <p class="creator__credit">Creation of <span>Jules Wyvern</span></p>
         </div>
@@ -33,7 +39,11 @@
     </div>
   {/if}
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. Coded by
+    Challenge by <a
+      href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank"
+      rel="noreferrer">Frontend Mentor</a
+    >. Coded by
     <a href="https://troycies.co">Troy Ciesco</a>.
   </div>
 </main>
